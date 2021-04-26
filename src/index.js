@@ -1,4 +1,10 @@
+import type from 'type-detect'
+
 function intersperse(arr, item) {
+  if (!Array.isArray(arr)) {
+    throw TypeError(`I can't work with ${type(arr)}`)
+  }
+
   const result = arr.reduce(
     (accumulator, currentValue, index, array) => [
       ...accumulator,
@@ -8,8 +14,8 @@ function intersperse(arr, item) {
     ],
 
     []
-  );
-  return result;
+  )
+  return result
 }
 
-export { intersperse };
+export { intersperse }

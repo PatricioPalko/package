@@ -2,13 +2,17 @@
   "name": "@patrikpalko/package",
   "version": "1.0.0",
   "description": "Inserts an item between array elements",
-  "source": "index.js",
+  "source": "src/index.js",
   "main": "dist/index.js",
   "module": "dist/index.module.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --watch",
     "build": "microbundle",
-    "dev": "microbundle watch"
+    "dev": "microbundle watch",
+    "format": "prettier src"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "files": [
     "dist"
@@ -35,6 +39,11 @@
     "eslint-config-prettier": "^8.2.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-prettier": "^3.4.0",
+    "jest": "^26.6.3",
+    "microbundle": "^0.13.0",
     "prettier": "2.2.1"
+  },
+  "dependencies": {
+    "type-detect": "^4.0.8"
   }
 }
